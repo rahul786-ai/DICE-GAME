@@ -1,5 +1,7 @@
 'use strict';
 //selecting elements
+const player0El = document.querySelector('.player--0');
+const player1El = document.querySelector('.player--1');
 const score0EL = document.querySelector('#score--0');
 const score1EL = document.getElementById('score--1');
 const current0EL = document.getElementById('current--0');
@@ -38,6 +40,7 @@ btnRoll.addEventListener('click', function () {
     //switch to next player
     document.getElementById(`current--${activeplayer}`).textContent = 0;
     activeplayer = activeplayer === 0 ? 1 : 0;
-    currentscore = 0;
+    player0El.classList.toggle('player--active');
+    player1El.classList.toggle('player--active');
   }
 });
