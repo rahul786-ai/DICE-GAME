@@ -57,10 +57,19 @@ btnRoll.addEventListener('click', function () {
       scores[activeplayer];
 
     //check if player score is > 100
+    if (scores[activeplayer] >= 10) {
+      document
+        .querySelector(`.player--${activeplayer}`)
+        .classList.add('player--winner');
+      document
+        .querySelector(`.player--${activeplayer}`)
+        .classList.remove('player--active');
+    } else {
+      switchplayer();
+    }
 
     //finish the game
 
     //switch to next player
-    switchplayer();
   });
 });
